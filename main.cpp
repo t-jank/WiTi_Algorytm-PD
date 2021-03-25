@@ -5,7 +5,7 @@ using namespace std;
 int main ()
 {
     int n,P[100],W[100],D[100];
-    ifstream plik("data.txt");
+    ifstream plik("data.1.txt");
     plik >> n; for(int i=0;i<n;i++) plik >> P[i]>>W[i]>>D[i];
     plik.close();
 
