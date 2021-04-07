@@ -1,12 +1,12 @@
 #include <iostream>
 #include <fstream>
-#include <ctime>
+//#include <ctime>
 
 using namespace std;
 int main ()
 {
-    clock_t start, stop; // do sprawdzenia czasu dzia³ania algorytmu
-    float diff,t=0,totaltime; // j.w.
+ //   clock_t start, stop; // do sprawdzenia czasu dzia³ania algorytmu
+ //   float diff,t=0,totaltime; // j.w.
     int n,P[100],W[100],D[100];
     ifstream plik("dane/data.10.txt");
     plik >> n; for(int i=0;i<n;i++) plik >> P[i]>>W[i]>>D[i];
@@ -15,8 +15,8 @@ int main ()
     /*for(int i=0;i<n;i++)
         cout<<P[i]<<" "<<W[i]<<" "<<D[i]<<endl;*/
 
-    for(int zz=0;zz<100;zz++){ // wielokrotnie wykonujemy ten sam algorytm dla zmierzenia czasu
-        start = clock(); // pocz¹tek dzia³ania algorytmu
+//    for(int zz=0;zz<100;zz++){ // wielokrotnie wykonujemy ten sam algorytm dla zmierzenia czasu
+//        start = clock(); // poczatek dzialania algorytmu
 
         int N=1<<n, *F=new int[N]; F[0]=0;
 
@@ -30,16 +30,16 @@ int main ()
             }
         }
 
-        stop = clock(); // koniec dzia³ania algorytmu
-        diff = stop - start; // czas dzia³ania algorytmu (ró¿nica miêdzy pocz¹tkiem i koñcem)
-        t=t+diff;
+  //      stop = clock(); // koniec dzialania algorytmu
+  //      diff = stop - start; // czas dzialania algorytmu (roznica miedzy poczatkiem i koncem)
+  //      t=t+diff;
 
 
-    //    cout<<F[N-1]<<endl;
-    }
-    totaltime = ((float)t)/CLOCKS_PER_SEC; // przeliczenie liczby taktów zegara na sekundy
-    cout << "Czas dzialania algorytmu: " << totaltime << " sekund.\n";
+        cout<<F[N-1]<<endl;
+  //  }
+  //  totaltime = ((float)t)/CLOCKS_PER_SEC; // przeliczenie liczby taktow zegara na sekundy
+  //  cout << "Czas dzialania algorytmu: " << totaltime << " sekund.\n";
 
- //   cin.get();
+    cin.get();
     return 0;
 }
